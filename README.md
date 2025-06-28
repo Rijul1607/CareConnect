@@ -1,8 +1,6 @@
+<img src="https://github.com/user-attachments/assets/9ad8b296-7e6c-4a82-8fa2-7c7161eaed8d" alt="CareConnect" width="300" height="300"/>
 
-
-# 🏥 CareConnect
-
-**CareConnect** is a modern telehealth platform designed to simplify access to home-based and remote healthcare. Patients can connect with certified nurses and doctors, book appointments, and conduct secure **video consultations** via Vonage. Authentication and user management are powered by **Clerk**, with built-in pricing and subscription handling.
+**CareConnect** is a modern telehealth platform designed to simplify access to home-based and remote healthcare. Patients can connect with certified  doctors, book appointments, and conduct secure **video consultations** via Vonage. Authentication and user management are powered by **Clerk**, with built-in pricing and subscription handling.
 
 🔗 [Live Site](https://care-connect-xi-two.vercel.app/)
 
