@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# 🏥 CareConnect
+
+**CareConnect** is a modern telehealth platform designed to simplify access to home-based and remote healthcare. Patients can connect with certified nurses and doctors, book appointments, and conduct secure **video consultations** via Vonage. Authentication and user management are powered by **Clerk**, with built-in pricing and subscription handling.
+
+🔗 [Live Site](https://care-connect-xi-two.vercel.app/)
+
+---
+
+## 🌟 Features
+
+* 🔐 **Clerk-based Auth** – Secure and scalable authentication & user management
+* 📅 Appointment booking with real-time doctor/nurse availability
+* 📹 **Vonage-powered Video Calling** – Seamless virtual consultations
+* 💳 **Pricing & Subscription Plans** via Clerk
+* 🧑‍⚕️ Separate dashboards for doctors and patients
+* 📈 Scalable, mobile-friendly UI built with Next.js
+
+---
+
+## 🛠️ Tech Stack
+
+| Category       | Technology                    |
+| -------------- | ----------------------------- |
+| Frontend       | Next.js, React, Tailwind CSS  |
+| Backend        | Next.js API Routes            |
+| Database       | PostgreSQL (via Prisma ORM)   |
+| Authentication | Clerk                         |
+| Payments       | Clerk  |
+| Video Calling  | Vonage (OpenTok API)          |
+| Hosting        | Vercel                        |
+| DB Hosting     | Neon.tech                     |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Node.js v16+
+* PostgreSQL (local or Neon)
+* Clerk & Vonage API keys
+
+### Clone & Install
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Rijul1607/CareConnect.git
+cd CareConnect
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Create `.env` file
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```env
+DATABASE_URL=your_postgresql_url
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+VONAGE_API_KEY=your_vonage_api_key
+VONAGE_API_SECRET=your_vonage_api_secret
+VONAGE_SESSION_ID=auto_or_dynamic_session_id
+NEXT_PUBLIC_CLERK_FRONTEND_API=your_frontend_clerk
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run Database & App
 
-## Learn More
+```bash
+npx prisma migrate dev
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Visit `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗂️ Project Structure
+```
+CareConnect/
+│
+├── .next/                 # Next.js build output (auto-generated)
+├── actions/               # Server-side action functions
+├── app/                   # App router structure (routes, layouts, pages)
+├── components/            # Reusable UI components
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility libraries, API clients, helpers
+├── node_modules/          # Dependencies
+├── prisma/                # Prisma schema and migration files
+├── public/                # Static assets
+│
+├── .env                   # Environment variables
+├── .gitignore             # Git ignore rules
+├── components.json        # Optional ShadCN component registry
+├── eslint.config.mjs      # ESLint config
+├── jsconfig.json          # JS path aliases config
+├── middleware.js          # Middleware logic (auth, redirects)
+├── next.config.mjs        # Next.js config
+├── package.json           # Project metadata and dependencies
+├── package-lock.json      # Exact version lock for npm
+├── postcss.config.mjs     # PostCSS config for Tailwind
+├── README.md              # Project documentation
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📹 Video Call Functionality
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Built using Vonage OpenTok APIs
+* Doctors and patients join secure rooms via appointment links
+* Supports camera/mic toggle, dynamic room creation, and appointment-based video sessions
+* Future scope: chat, screen sharing, multi-party support
+
+---
+
+## 💳 Pricing & Subscription
+
+* Clerk-integrated pricing tiers
+* Patients see different features or limits based on their plan
+* Add-on Stripe support (if required) for advanced billing
+
+---
+
+
